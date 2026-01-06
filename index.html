@@ -731,6 +731,18 @@
                     window.open('whomp/whomp.html', '_blank', 
                         `width=${winWidth},height=${winHeight},left=0,top=${Math.floor((screenH - winHeight) / 2)},resizable=yes`);
                 } else if (this.id === 'button2') {
+                    // Open three URLs in separate windows - mistral first so it appears behind
+                    window.open('https://chat.mistral.ai/memories', '_blank', 
+                        `width=${winWidth},height=${winHeight},left=${screenW - winWidth},top=0,resizable=yes`);
+                    setTimeout(() => {
+                        window.open('https://weird-web-tales.vercel.app/', '_blank', 
+                            `width=${winWidth},height=${winHeight},left=0,top=0,resizable=yes`);
+                    }, 100);
+                    setTimeout(() => {
+                        window.open('https://dijiang-site.vercel.app/', '_blank', 
+                            `width=${winWidth},height=${winHeight},left=${Math.floor((screenW - winWidth) / 2)},top=${Math.floor((screenH - winHeight) / 2)},resizable=yes`);
+                    }, 200);
+                } else if (this.id === 'button3') {
                     // Open 6 URLs in order: back to front (last opened appears on top)
                     const centerX = Math.floor((screenW - winWidth) / 2);
                     const centerY = Math.floor((screenH - winHeight) / 2);
@@ -764,18 +776,6 @@
                         window.open('https://journey-maps.vercel.app/', '_blank', 
                             `width=${winWidth},height=${winHeight},left=${centerX},top=${centerY},resizable=yes`);
                     }, 250);
-                } else if (this.id === 'button3') {
-                    // Open three URLs in separate windows - mistral first so it appears behind
-                    window.open('https://chat.mistral.ai/memories', '_blank', 
-                        `width=${winWidth},height=${winHeight},left=${screenW - winWidth},top=0,resizable=yes`);
-                    setTimeout(() => {
-                        window.open('https://weird-web-tales.vercel.app/', '_blank', 
-                            `width=${winWidth},height=${winHeight},left=0,top=0,resizable=yes`);
-                    }, 100);
-                    setTimeout(() => {
-                        window.open('https://dijiang-site.vercel.app/', '_blank', 
-                            `width=${winWidth},height=${winHeight},left=${Math.floor((screenW - winWidth) / 2)},top=${Math.floor((screenH - winHeight) / 2)},resizable=yes`);
-                    }, 200);
                 }
             });
         });
