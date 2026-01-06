@@ -490,14 +490,9 @@
                     const centerY = Math.floor((screenH - winHeight) / 2);
                     const offset = 40; // Offset for stacked window
                     
-                    // Open background window first (offset to peek behind)
+                    // Open oulipo window
                     window.open('https://oulipo.vercel.app/we-called-us-poetry.html', '_blank', 
-                        `width=${winWidth},height=${winHeight},left=${centerX + offset},top=${centerY + offset},resizable=yes`);
-                    // Open main window last so it appears on top
-                    setTimeout(() => {
-                        window.open('https://weirder-ai.vercel.app/psy-grey/psy-grey.html', '_blank', 
-                            `width=${winWidth},height=${winHeight},left=${centerX},top=${centerY},resizable=yes`);
-                    }, 100);
+                        `width=${winWidth},height=${winHeight},left=${centerX},top=${centerY},resizable=yes`);
                 });
                 
                 setTimeout(() => {
